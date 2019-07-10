@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const FETCH_POSTS_THUNK_REQUEST = 'FETCH_POSTS_THUNK_REQUEST';
-export const FETCH_POSTS_THUNK_SUCCESS = 'FETCH_POSTS_THUNK_SUCCESS';
-export const FETCH_POSTS_THUNK_FAILURE = 'FETCH_POSTS_THUNK_FAILURE';
+export const FETCH_POSTS_THUNK_PROMISE_REQUEST = 'FETCH_POSTS_THUNK_PROMISE_REQUEST';
+export const FETCH_POSTS_THUNK_PROMISE_SUCCESS = 'FETCH_POSTS_THUNK_PROMISE_SUCCESS';
+export const FETCH_POSTS_THUNK_PROMISE_FAILURE = 'FETCH_POSTS_THUNK_PROMISE_FAILURE';
 
 export const fetchPostsThunkRequest = () => {
   return (dispatch, getState) => {
@@ -13,7 +13,7 @@ export const fetchPostsThunkRequest = () => {
     //   return;
     // }
 
-    dispatch({ type: FETCH_POSTS_THUNK_REQUEST });
+    dispatch({ type: FETCH_POSTS_THUNK_PROMISE_REQUEST });
     return axios('https://jsonplaceholder.typicode.com/todos')
       .then(
         response => dispatch(fetchPostsThunkSuccess(response.data)),
@@ -23,11 +23,11 @@ export const fetchPostsThunkRequest = () => {
 }
 
 export const fetchPostsThunkSuccess = (posts) => ({
-  type: FETCH_POSTS_THUNK_SUCCESS,
+  type: FETCH_POSTS_THUNK_PROMISE_SUCCESS,
   posts
 })
 
 export const fetchPostsThunkFailure = (error) => ({
-  type: FETCH_POSTS_THUNK_FAILURE,
+  type: FETCH_POSTS_THUNK_PROMISE_FAILURE,
   error
 })

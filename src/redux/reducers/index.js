@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import thunkReducer from './thunkReducer';
+import promiseReducer from '../../thunk/reducers/promiseReducer';
+import asyncReducer from '../../thunk/reducers/asyncReducer';
+import sagaReducer from '../../saga/reducers';
 
 export default combineReducers({
-  thunkReduxState: thunkReducer,
+  thunkPromise: promiseReducer,
+  thunkAsync: asyncReducer,
+  saga: sagaReducer,
 })
