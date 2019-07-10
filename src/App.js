@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
+import { fetchPostsThunkRequest } from './thunkActions/promiseActions';
+import { fetchPostsAsyncAwaitThunkRequest } from './thunkActions/asyncActions';
 
-function App() {
+function App({ requestThunk, requestAsyncAwaitThunk }) {
+  const fireThunkRequest = () => {
+    requestThunk();
+  }
+
+  const fireAsyncAwaitThunkRequest = () => {
+    requestAsyncAwaitThunk();
+  }
+
+  const fireSagaRequest = () => {
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='buttons-container'>
+        <button onClick={fireThunkRequest}>Fire Thunk</button>
+        <button onClick={fireAsyncAwaitThunkRequest}>Fire Async/Await Thunk</button>
+        <button onClick={fireSagaRequest}>Fire Saga</button>
+      </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    thunkReduxState: state.thunkReduxState,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    requestThunk: () => dispatch(fetchPostsThunkRequest()),
+    requestAsyncAwaitThunk: () => dispatch(fetchPostsAsyncAwaitThunkRequest()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
