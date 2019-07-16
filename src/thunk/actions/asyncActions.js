@@ -7,9 +7,9 @@ export const FETCH_POSTS_THUNK_ASYNC_FAILURE = 'FETCH_POSTS_THUNK_ASYNC_FAILURE'
 export const fetchPostsAsyncAwaitThunkRequest = () => {
   return async (dispatch, getState) => {
 
-    // const { thunkReduxState } = getState();
+    // const { thunkAsync } = getState();
 
-    // if (thunkReduxState.posts.length > 0) {
+    // if (thunkAsync.posts.length > 0) {
     //   return;
     // }
 

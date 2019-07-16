@@ -7,9 +7,9 @@ export const FETCH_POSTS_THUNK_PROMISE_FAILURE = 'FETCH_POSTS_THUNK_PROMISE_FAIL
 export const fetchPostsThunkRequest = () => {
   return (dispatch, getState) => {
     
-    // const { thunkReduxState } = getState();
+    // const { thunkPromise } = getState();
 
-    // if (thunkReduxState.posts.length > 0) {
+    // if (thunkPromise.posts.length > 0) {
     //   return;
     // }
 
