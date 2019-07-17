@@ -6,7 +6,7 @@ const axiosRequest = () => {
   return axios('https://jsonplaceholder.typicode.com/todos');
 }
 
-function* fetchPosts() {
+export function* fetchPosts() {
   try {
     const response = yield call(axiosRequest);
     yield put({ type: FETCH_POSTS_SAGA_SUCCESS, posts: response.data })

@@ -1770,7 +1770,7 @@ babel-preset-react-app@^9.0.0:
     babel-plugin-macros "2.5.1"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
 
-babel-runtime@^6.26.0:
+babel-runtime@^6.11.6, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -5152,6 +5152,10 @@ lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
 
+lodash.curry@^4.0.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.curry/-/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
+
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
@@ -7076,6 +7080,18 @@ redux-mock-store@^1.5.3:
   resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.5.3.tgz#1f10528949b7ce8056c2532624f7cafa98576c6d"
   dependencies:
     lodash.isplainobject "^4.0.6"
+
+redux-saga-test@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/redux-saga-test/-/redux-saga-test-1.0.1.tgz#7bc2770875bb3d96a9b3e1f1ae1d0fe24b3c12b6"
+  dependencies:
+    lodash.curry "^4.0.1"
+
+redux-saga-tester@^1.0.501:
+  version "1.0.501"
+  resolved "https://registry.yarnpkg.com/redux-saga-tester/-/redux-saga-tester-1.0.501.tgz#f55d0d308d8f0e2536fb349f510191e2f7d9bed4"
+  dependencies:
+    babel-runtime "^6.11.6"
 
 redux-saga@^1.0.5:
   version "1.0.5"
